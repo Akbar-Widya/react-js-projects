@@ -1,0 +1,20 @@
+const Search = ({ searchTerm, setSearchTerm }) => {
+   // never mutate props or state
+   // searchTerm = "I AM SPIDERMAN"
+   return (
+      <div className="search">
+         <div>
+            <img src="./search.svg" alt="Search" />
+
+            <input
+               type="text" 
+               placeholder="Search through thousands of movies"
+               value={searchTerm}
+               onChange={(event) => setSearchTerm(event.target.value)}   
+            />
+         </div>
+      </div>
+   )
+};
+
+export default Search;
