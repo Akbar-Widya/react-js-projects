@@ -1,6 +1,8 @@
-const MovieCard = ({ movie: { title, vote_average, poster_path, original_language, release_date } }) => {
+import { Link } from "react-router-dom";
+
+const MovieCard = ({ movie: { title, vote_average, poster_path, original_language, release_date, id } }) => {
    return (
-      <div className="movie-card">
+      <Link to={`/movie/${id}`} className="movie-card">
          <img 
             src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : '/no-movie.png'} 
             alt={title} 
@@ -24,7 +26,7 @@ const MovieCard = ({ movie: { title, vote_average, poster_path, original_languag
                </p>
             </div>
          </div>
-      </div>
+      </Link>
    );
 };
 
